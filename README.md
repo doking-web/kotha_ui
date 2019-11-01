@@ -32,3 +32,7 @@ yarn lint
 
 ### Customize configuration
 See [Configuration Reference](https://cli.vuejs.org/config/).
+
+
+### Kotha UI design for my _Kotha_ app
+See in [Github](https://github.com/doking-web/kotha)

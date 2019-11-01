@@ -1,18 +1,53 @@
 <template>
-  <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js + TypeScript App"/>
+  <div :height="height" :width="width" class="home">
+    <Header msg="Conversations" />
+    <div class="scroll-view">
+      <Conversation />
+      <Conversation />
+      <Conversation />
+      <Conversation />
+      <Conversation />
+      <Conversation />
+      <Conversation />
+      <Conversation />
+      <Conversation />
+      <Conversation />
+    </div>
+    <Footer />
   </div>
 </template>
 
+<style scoped lang="scss">
+.home {
+  display: grid;
+}
+.scroll-view{
+  overflow-y: scroll;
+}
+</style>
+
 <script lang="ts">
 import { Component, Vue } from 'vue-property-decorator';
-import HelloWorld from '@/components/HelloWorld.vue'; // @ is an alias to /src
+import Header from '@/components/Header.vue';
+import Footer from '@/components/Footer.vue';
+import Conversation from '@/components/Conversation.vue';
 
 @Component({
   components: {
-    HelloWorld,
+    Header,
+    Footer,
+    Conversation,
   },
+
 })
-export default class Home extends Vue {}
+export default class Home extends Vue {
+  private height: number = 0;
+  private width: number = 0;
+  protected created() {
+    this.height = window.innerHeight;
+    this.width = window.innerWidth;
+
+    console.log(this)
+  }
+}
 </script>
